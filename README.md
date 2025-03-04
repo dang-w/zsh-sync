@@ -16,6 +16,8 @@ This tool creates symlinks between your local ZSH configuration files and a GitH
 - **Conflict Resolution**: Automatically handles merge conflicts
 - **Automatic Setup**: Creates necessary symlinks and initial configuration
 - **Detailed Logging**: Maintains a log of all sync activities
+- **Smart Change Detection**: Ignores whitespace-only changes to prevent unnecessary sync prompts
+- **Change Preview**: Shows a diff of changes before pushing or pulling
 
 ## Prerequisites
 
@@ -128,9 +130,11 @@ This will run the sync script every 20 minutes.
 1. **Initial Setup**: The script creates symlinks from your ZSH configuration files to the cloned Gist repository.
 2. **Startup Behavior**: After installation, the script waits for the full sync interval (20 minutes) before performing its first check to avoid immediate prompts.
 3. **Periodic Checks**: Every 20 minutes, the script checks for changes in both local and remote settings.
-4. **Change Detection**: When changes are detected, you'll receive a notification asking if you want to sync.
-5. **Synchronization**: The script handles pushing local changes to GitHub or pulling remote changes to your local machine.
-6. **Conflict Resolution**: If conflicts occur, the script automatically resolves them by keeping your local version and creating backups.
+4. **Smart Change Detection**: The script ignores whitespace-only changes, preventing unnecessary sync prompts.
+5. **Change Detection**: When significant changes are detected, you'll receive a notification asking if you want to sync.
+6. **Change Preview**: Before confirming a sync, you'll see a diff showing exactly what changes will be pushed or pulled.
+7. **Synchronization**: The script handles pushing local changes to GitHub or pulling remote changes to your local machine.
+8. **Conflict Resolution**: If conflicts occur, the script automatically resolves them by keeping your local version and creating backups.
 
 ## File Locations
 
